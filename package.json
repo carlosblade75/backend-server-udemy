@@ -10,10 +10,14 @@
   "author": "Carlos Sierra",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
     "express": "^4.16.3",
-    "mongoose": "^5.0.10"
+    "jsonwebtoken": "^8.2.0",
+    "mongoose": "^5.0.10",
+    "mongoose-unique-validator": "^2.0.0"
   },
   "devDependencies": {
-    "nodemon":"^1.12.1"
+    "nodemon": "^1.12.1"
   }
 }

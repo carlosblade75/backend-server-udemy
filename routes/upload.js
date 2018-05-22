@@ -40,7 +40,7 @@ app.put('/:tipo/:id', (req, res, next) => {
     var nombreCortado = archivo.name.split('.');
     var extensionArchivo = nombreCortado[nombreCortado.length - 1];
 
-    // Solo estas extensiones acceptamos
+    // Solo estas extensiones aceptamos
 
     var extensionesValidas = ['png', 'jpg', 'gif', 'jpeg'];
 

@@ -17,7 +17,7 @@ app.get('/', (req, res, next) => {
     var desde = req.query.desde || 0;
     desde = Number(desde);
 
-    Usuario.find({}, 'nombre email img role')
+    Usuario.find({}, 'nombre email img role google')
         .skip(desde)
         .limit(5)
         .exec(
@@ -44,8 +44,9 @@ app.get('/', (req, res, next) => {
 //=================================================
 // Crear nuevo usuario
 //=================================================
+//app.post('/', middWaAutenticacion.verificaToken, (req, res) => {
 
-app.post('/', middWaAutenticacion.verificaToken, (req, res) => {
+app.post('/', (req, res) => {
 
     var body = req.body;
 
@@ -80,7 +81,7 @@ app.post('/', middWaAutenticacion.verificaToken, (req, res) => {
 // Actualizar un usuario por ID
 //=================================================
 
-app.put('/:id', middWaAutenticacion.verificaToken, (req, res) => {
+app.put('/:id', [middWaAutenticacion.verificaToken, middWaAutenticacion.verificaADMIN_o_MismoUsuario], (req, res) => {
 
     var id = req.params.id;
 
